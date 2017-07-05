@@ -1,9 +1,9 @@
 #pragma once
-#include <SFML\Audio.hpp>
-#include "AlgorithmFactory.h"
-#include "BubbleSort.h"
-#include "BarGraph.h"
-#include "Gui.h"
+#include <SFML/Audio.hpp>
+#include "../Algorithm/AlgorithmFactory.h"
+#include "../Algorithm/BubbleSort.h"
+#include "../Graph/BarGraph.h"
+#include "../Hud/Gui.h"
 
 class AlgorithmVisualise
 {

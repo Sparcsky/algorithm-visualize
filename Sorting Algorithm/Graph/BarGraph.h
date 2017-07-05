@@ -2,7 +2,7 @@
 #include <memory>
 #include <unordered_map>
 #include "Bar.h"
-#include "Utils.h"
+#include "../Util/Utils.h"
 class BarGraph
 {
 public:

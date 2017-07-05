@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML\Audio.hpp>
 #include <memory>
-#include "BarGraph.h"
-#include "Utils.h"
+#include "../Graph/BarGraph.h"
+#include "../Util/Utils.h"
 
 
 class SortAlgorithm

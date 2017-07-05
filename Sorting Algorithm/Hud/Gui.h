@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include "GuiFactory.h"
-#include "TextureAtlas.h"
+#include "../TextureAtlas.h"
 
 class Gui
 {

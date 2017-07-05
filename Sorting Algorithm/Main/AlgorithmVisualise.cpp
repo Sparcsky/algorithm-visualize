@@ -72,16 +72,13 @@ void AlgorithmVisualise::handleInput(sf::Event & event, sf::Vector2f mousePos)
 		else if (gui.textButtons[1].isChecked(event, mousePos))
 		{
 			barGraph.reset();
-			std::cout << "1" << std::endl;
 		}
 		else if (gui.textButtons[2].isChecked(event, mousePos))
 		{
-			std::cout << "2" << std::endl;
 
 		}
 		else if (gui.textButtons[3].isChecked(event, mousePos))
 		{
-			std::cout << "3" << std::endl;
 
 		}
 		start = gui.textButtons[0].checked;

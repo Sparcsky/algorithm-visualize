@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
-#include "TextureAtlas.h"
+#include "../TextureAtlas.h"
 class Widget
 {
 public:
