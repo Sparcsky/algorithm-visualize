@@ -1,0 +1,39 @@
+name: panel
+xy: 1 90
+size: 262 107
+lengthX: 1
+
+name: text_input
+xy: 1 59
+size: 326 29
+lengthX: 2
+
+name: sliderBox
+xy: 1 52
+size: 241 5
+lengthX: 1
+
+name: btn
+xy: 265 167
+size: 162 30
+lengthX: 2
+
+name: btn_play
+xy: 1 19
+size: 60 31
+lengthX: 2
+
+name: arrow
+xy: 265 136
+size: 28 29
+lengthX: 1
+
+name: pause
+xy: 429 168
+size: 28 29
+lengthX: 1
+
+name: slider
+xy: 1 1
+size: 17 16
+lengthX: 1
