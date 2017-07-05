@@ -1,5 +1,5 @@
 #include "AlgorithmVisualise.h"
-#include <iostream>
+
 AlgorithmVisualise::AlgorithmVisualise()
 	:barProperty(sf::Color::Black, sf::Color::Red, 0)
 {
@@ -37,7 +37,7 @@ void AlgorithmVisualise::run(sf::RenderWindow &window)
 		if (start)
 		{
 			sortAlgorithm->setSpeed(gui.sliders[0].getValue());
-			sortAlgorithm->sort();
+		 	sortAlgorithm->sort();
 		}
 		if (gui.textButtons[2].checked && !start)
 		{
