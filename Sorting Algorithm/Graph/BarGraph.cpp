@@ -26,7 +26,7 @@ void BarGraph::shuffle()
 {
 	srand(time(NULL));
 
-	for (size_t i = 0; i < bars.size(); i++)
+	for (size_t i = 0; i < size(); i++)
 	{
 		int x = rand() % bars.size();
 		utility::swap(bars[i], bars[x]);
@@ -65,7 +65,7 @@ void BarGraph::update()
 
 void BarGraph::reset()
 {
-	for (size_t i = 0; i < data.barNumber; i++)
+	for (size_t i = 0; i < size(); i++)
 	{
 		sf::Vector2f size_(data.size.x, i * data.size.y);
 		sf::Vector2f pos_(i * data.distance, 600);
