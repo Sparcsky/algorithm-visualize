@@ -143,6 +143,7 @@
     <ClCompile Include="Hud\ItemList.cpp" />
     <ClCompile Include="Graph\ShapeProperty.cpp" />
     <ClCompile Include="Algorithm\SortAlgorithm.cpp" />
+    <ClCompile Include="Algorithm\MergeSort.cpp" />
     <ClCompile Include="TextureAtlas.cpp" />
     <ClCompile Include="Util\Utils.cpp" />
     <ClCompile Include="Hud\Widget.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="Hud\ItemList.h" />
     <ClInclude Include="Graph\ShapeProperty.h" />
     <ClInclude Include="Algorithm\SortAlgorithm.h" />
+    <ClInclude Include="Algorithm\MergeSort.h" />
     <ClInclude Include="TextureAtlas.h" />
     <ClInclude Include="Util\Utils.h" />
     <ClInclude Include="Hud\Widget.h" />

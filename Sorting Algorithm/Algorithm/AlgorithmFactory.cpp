@@ -25,6 +25,11 @@ std::shared_ptr<SortAlgorithm> AlgorithmFactory::getAlgorithm(std::string name)
 	{
 		sort.reset(new SelectionSort());
 	}
+	else if (name == "Merge sort")
+	{
+		sort.reset(new MergeSort());
+	}
+	
 	return sort;
 }
 

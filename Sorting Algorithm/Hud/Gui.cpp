@@ -6,7 +6,7 @@ Gui::Gui()
 	font = new sf::Font();
 	font->loadFromFile("Assets/molten.ttf");
 
-	std::vector<std::string> lstName = { "Bubble sort","Insertion sort","Selection sort" };
+	std::vector<std::string> lstName = { "Bubble sort","Insertion sort","Selection sort","Merge sort" };
 	std::string btnName[] = { "start","edit","shuffle","reset" };
 	std::string sldName[] = { "speed","quantity","width","height","gap" };
 
