@@ -1,4 +1,5 @@
 #include "AlgorithmVisualise.h"
+#include <iostream>
 
 AlgorithmVisualise::AlgorithmVisualise()
 	:barProperty(sf::Color::Black, sf::Color::Red, 0)
@@ -6,8 +7,13 @@ AlgorithmVisualise::AlgorithmVisualise()
 	if (buffer.loadFromFile("Assets/Do.wav"));
 	barGraph = BarGraph(barProperty);
 
-	gui.sliders[0].setValue(200);
+	gui.sliders[0].setValue(500);
 	gui.sliders[1].setValue(2000);
+	gui.textButtons[0].disable = true;
+	gui.textButtons[2].disable = true;
+	gui.textButtons[3].disable = true;
+
+
 }
 AlgorithmVisualise::~AlgorithmVisualise()
 {
@@ -37,15 +43,11 @@ void AlgorithmVisualise::run(sf::RenderWindow &window)
 		if (start)
 		{
 			sortAlgorithm->setSpeed(gui.sliders[0].getValue());
-		 	sortAlgorithm->sort();
+			sortAlgorithm->sort();
 		}
-		if (gui.textButtons[2].checked && !start)
+		else if (gui.textButtons[1].checked)
 		{
-			gui.act(event, mousePos);
-			barGraph.data.barNumber = gui.sliders[1].getValue();
-			barGraph.data.size.x = gui.sliders[2].getValue();
-			barGraph.data.size.y = gui.sliders[3].getValue();
-			barGraph.data.distance = gui.sliders[4].getValue();
+			updateData();
 			barGraph.update();
 		}
 
@@ -57,30 +59,36 @@ void AlgorithmVisualise::run(sf::RenderWindow &window)
 
 void AlgorithmVisualise::handleInput(sf::Event & event, sf::Vector2f mousePos)
 {
+	gui.act(event, mousePos);
 
-	switch (event.type)
+	if (gui.textButtons[0].isChecked(event, mousePos) && !start)
 	{
-	case sf::Event::MouseButtonReleased:
-	case sf::Event::MouseButtonPressed:
-		if (gui.textButtons[0].isChecked(event, mousePos) && !start)
-		{
-			sortAlgorithm = AlgorithmFactory::getAlgorithm(selectSort);
-			sortAlgorithm->setVisual(barGraph);
-			sortAlgorithm->setSound(buffer);
-			barGraph.shuffle();
-		}
-		else if (gui.textButtons[1].isChecked(event, mousePos))
-		{
-			barGraph.reset();
-		}
-		else if (gui.textButtons[2].isChecked(event, mousePos))
-		{
-
-		}
-		else if (gui.textButtons[3].isChecked(event, mousePos))
-		{
-
-		}
-		start = gui.textButtons[0].checked;
+		sortAlgorithm = AlgorithmFactory::getAlgorithm(selectSort);
+		sortAlgorithm->setVisual(barGraph);
+		sortAlgorithm->setSound(buffer);
+		barGraph.shuffle();
+		start = true;
 	}
+	else if (gui.textButtons[1].isChecked(event, mousePos))
+	{
+		start = false;
+
+	}
+	else if (gui.textButtons[2].isChecked(event, mousePos))
+	{
+		barGraph.shuffle();
+		std::cout << barGraph.size()<< std::endl;
+	}
+	else if (gui.textButtons[3].isChecked(event, mousePos))
+	{
+		barGraph.reset();
+	}
+}
+
+void AlgorithmVisualise::updateData()
+{
+	barGraph.data.barNumber = gui.sliders[1].getValue();
+	barGraph.data.size.x = gui.sliders[2].getValue();
+	barGraph.data.size.y = gui.sliders[3].getValue();
+	barGraph.data.distance = gui.sliders[4].getValue();
 }

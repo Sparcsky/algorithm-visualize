@@ -12,6 +12,7 @@ public:
 	~AlgorithmVisualise();
 
 	void handleInput(sf::Event & event, sf::Vector2f mousePos);
+	void updateData();
 	void run(sf::RenderWindow &window);
 
 private:

@@ -19,8 +19,9 @@ public:
 	void setString(std::string title);
 	void textSettings(sf::Font &font, std::string txt, int size);
 
+	bool checked = false;
 	bool disable = false;
-	bool checked = true;
+
 
 protected:
 	sf::Text text;

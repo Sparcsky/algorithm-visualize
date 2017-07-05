@@ -29,26 +29,25 @@ bool TextButton::isChecked(sf::Event& e, sf::Vector2f mousePos)
 {
 	if (isClicked(e, mousePos))
 	{
-		if (checked)
+		if (!checked)
 		{
 			sprite_.setTextureRect(frames_[1]);
 			text.setPosition(text.getPosition().x - 2, text.getPosition().y + 2);
-			checked = false;
+			checked = true;
 		}
-		else if (!checked && !disable)
+		else if (checked && !disable)
 		{
 			sprite_.setTextureRect(frames_[0]);
 			text.setPosition(text.getPosition().x + 2, text.getPosition().y - 2);
-			checked = true;
+			checked = false;
 		}
-	
-		return true;
+		return checked;
 	}
 	if (disable && text.getPosition() != defPos)
 	{
 		sprite_.setTextureRect(frames_[0]);
 		text.setPosition(defPos);
-		checked = true;
+		checked = false;
 	}
 	return false;
 }
