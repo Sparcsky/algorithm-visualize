@@ -6,7 +6,7 @@ Gui::Gui()
 	font = new sf::Font();
 	font->loadFromFile("Assets/molten.ttf");
 
-	std::vector<std::string> lstName = { "Bubble sort","Insertion sort" };
+	std::vector<std::string> lstName = { "Bubble sort","Insertion sort","Selection sort" };
 	std::string btnName[] = { "start","edit","shuffle","reset" };
 	std::string sldName[] = { "speed","quantity","width","height","gap" };
 
@@ -37,21 +37,19 @@ Gui::~Gui()
 	delete font;
 }
 
-bool Gui::act(sf::Event & e, sf::Vector2f mousePos)
+void Gui::updateSlider(sf::Vector2f mousePos)
 {
-	for (size_t i = 0; i < 5; i++)
+	for (size_t i = 0; i <= 4; i++)
 	{
-		sliders[i].act(e, mousePos);
+		sliders[i].act(mousePos);
 	}
-
-	return false;
 }
 
 void Gui::display(sf::RenderWindow & window)
 {
+
 	window.draw(panel);
 	itemList.draw(window);
-
 	for (size_t i = 0; i < 5; i++)
 	{
 		if (i < 4)

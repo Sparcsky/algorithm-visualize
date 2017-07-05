@@ -6,7 +6,10 @@ class SelectionSort :
 public:
 	SelectionSort();
 	~SelectionSort();
+	virtual void sort() override;
 
 private:
+	int start = 0;
+	Bar  * min;
 };
 

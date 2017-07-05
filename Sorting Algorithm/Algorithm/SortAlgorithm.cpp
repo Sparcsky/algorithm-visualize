@@ -1,6 +1,6 @@
 #include "SortAlgorithm.h"
 SortAlgorithm::SortAlgorithm()
-	:barGraph(barGraph), algoSound(algoSound)
+	:algoSound(algoSound)
 {
 	
 }

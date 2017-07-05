@@ -13,7 +13,6 @@ AlgorithmVisualise::AlgorithmVisualise()
 	gui.textButtons[2].disable = true;
 	gui.textButtons[3].disable = true;
 
-
 }
 AlgorithmVisualise::~AlgorithmVisualise()
 {
@@ -38,8 +37,7 @@ void AlgorithmVisualise::run(sf::RenderWindow &window)
 
 		}
 		selectSort = gui.itemList.selectItem(mousePos);
-
-		window.clear(sf::Color::White);
+		
 		if (start)
 		{
 			sortAlgorithm->setSpeed(gui.sliders[0].getValue());
@@ -47,10 +45,13 @@ void AlgorithmVisualise::run(sf::RenderWindow &window)
 		}
 		else if (gui.textButtons[1].checked)
 		{
+			gui.updateSlider(mousePos);
 			updateData();
 			barGraph.update();
 		}
 
+
+		window.clear(sf::Color::White);
 		barGraph.draw(window);
 		gui.display(window);
 		window.display();
@@ -59,7 +60,6 @@ void AlgorithmVisualise::run(sf::RenderWindow &window)
 
 void AlgorithmVisualise::handleInput(sf::Event & event, sf::Vector2f mousePos)
 {
-	gui.act(event, mousePos);
 
 	if (gui.textButtons[0].isChecked(event, mousePos) && !start)
 	{

@@ -16,7 +16,7 @@ public:
 	~Gui();
 
 	void display(sf::RenderWindow &window);
-	bool act(sf::Event &e, sf::Vector2f mousePos);
+	void updateSlider( sf::Vector2f mousePos);
 
 
 private:
@@ -24,4 +24,5 @@ private:
 	GuiFactory guiFactory;
 	sf::Font *font;
 	sf::Sprite panel;
+	sf::Vector2f mousePos_;
 };

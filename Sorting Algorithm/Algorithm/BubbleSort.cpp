@@ -33,8 +33,3 @@ void BubbleSort::sort()
 		i++;
 	}
 }
-
-void BubbleSort::reset()
-{
-
-}

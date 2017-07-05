@@ -28,7 +28,7 @@ Slider::~Slider()
 }
 
 
-bool Slider::act(sf::Event &e, sf::Vector2f mousePos)
+void Slider::act(sf::Vector2f mousePos)
 {
 	if (isHover(mousePos))
 	{
@@ -45,11 +45,8 @@ bool Slider::act(sf::Event &e, sf::Vector2f mousePos)
 
 			sprite_.setPosition(mousePos.x, sliderPos.y);
 			txtValue.setString(std::to_string(value_).substr(0, 4));
-
-			return true;
 		}
 	}
-	return false;
 }
 
 void Slider::setValue(float value)

@@ -8,7 +8,7 @@ public:
 	Slider();
 	~Slider();
 
-	bool act(sf::Event & e, sf::Vector2f mousePos);
+	void act(sf::Vector2f mousePos);
 	void setValue(float value);
 	virtual void scale(float x, float y) override;
 	virtual void setPosition(sf::Vector2f pos) override;

@@ -21,6 +21,10 @@ std::shared_ptr<SortAlgorithm> AlgorithmFactory::getAlgorithm(std::string name)
 	{
 		sort.reset(new InsertionSort());
 	}
+	else if (name == "Selection sort")
+	{
+		sort.reset(new SelectionSort());
+	}
 	return sort;
 }
 

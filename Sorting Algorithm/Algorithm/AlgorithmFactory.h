@@ -4,6 +4,7 @@
 #include "SortAlgorithm.h"
 #include "BubbleSort.h"
 #include "InsertionSort.h"
+#include "SelectionSort.h"
 
 class AlgorithmFactory
 {
