@@ -26,11 +26,11 @@ void MergeSort::mergeSort(std::vector<Bar> & bars)
 	int mid = bars.size() / 2;
 	for (size_t j = 0; j < mid;j++)
 	{
-		left[j] = bars[j];
+		left.push_back(bars[j]);
 	}
 	for (size_t j = 0; j < bars.size() - mid; j++)
 	{
-		right[j] = bars[mid + j];
+		right.push_back(bars[mid + j]);
 	}
 	mergeSort(left);
 	mergeSort(right);
@@ -75,36 +75,3 @@ bool MergeSort::isSortFinished()
 {
 	return false;
 }
-
-//////////// void merge(vector<int>& left, vector<int>& right, vector<int>& nums)
-////////////{
-////////////	int nL = left.size();
-////////////	int nR = right.size();
-////////////	int i = 0, j = 0, k = 0;
-////////////
-////////////	while (j < nL && k < nR)
-////////////	{
-////////////		if (left[j] < right[k])
-////////////		{
-////////////			nums[i] = left[j];
-////////////			j++;
-////////////		}
-////////////		else
-////////////		{
-////////////			nums[i] = right[k];
-////////////			k++;
-////////////		}
-////////////		i++;
-////////////	}
-////////////	while (j < nL)
-////////////	{
-////////////		nums[i] = left[j];
-////////////		i++;j++;
-////////////	}
-////////////	while (k < nR)
-////////////	{
-////////////		nums[i] = right[k];
-////////////		i++;k++;
-////////////	}
-////////////
-////////////}

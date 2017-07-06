@@ -9,7 +9,7 @@ SelectionSort::~SelectionSort()
 {
 
 }
-#include <iostream>
+
 void SelectionSort::sort()
 {
 	if (i >= barGraph->size())
