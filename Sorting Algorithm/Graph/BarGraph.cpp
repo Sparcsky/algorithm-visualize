@@ -94,3 +94,8 @@ int BarGraph::size()
 {
 	return bars.size();
 }
+
+std::map<int, Bar> & BarGraph::getItem()
+{
+	return bars;
+}

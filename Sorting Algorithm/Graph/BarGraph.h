@@ -24,16 +24,14 @@ public:
 	void update();
 	void reset();
 	void draw(sf::RenderWindow &window);
-
 	bool isEmpty();
 	int size();
-
+	std::map<int,Bar> &getItem();
 	Data data;
 
 private:
 	std::map<int,Bar> bars;
 	std::map<int, Bar>::iterator it;
-	std::unordered_map<int,sf::Vector2f> mapPos;
 	ShapeProperty shapeProperty_;
 	bool isShuffle= false;
 

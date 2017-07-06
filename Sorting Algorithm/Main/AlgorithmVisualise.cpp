@@ -37,7 +37,7 @@ void AlgorithmVisualise::run(sf::RenderWindow &window)
 
 		}
 		selectSort = gui.itemList.selectItem(mousePos);
-		
+
 		if (start)
 		{
 			sortAlgorithm->setSpeed(gui.sliders[0].getValue());
@@ -72,12 +72,10 @@ void AlgorithmVisualise::handleInput(sf::Event & event, sf::Vector2f mousePos)
 	else if (gui.textButtons[1].isChecked(event, mousePos))
 	{
 		start = false;
-
 	}
 	else if (gui.textButtons[2].isChecked(event, mousePos))
 	{
 		barGraph.shuffle();
-		std::cout << barGraph.size()<< std::endl;
 	}
 	else if (gui.textButtons[3].isChecked(event, mousePos))
 	{
