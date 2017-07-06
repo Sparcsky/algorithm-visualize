@@ -38,7 +38,6 @@ void BarGraph::update()
 	if (bars.size() > data.barNumber)
 	{
 		bars.resize(data.barNumber);
-
 	}
 	else
 	{
