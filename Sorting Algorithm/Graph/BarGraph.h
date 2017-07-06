@@ -1,6 +1,5 @@
 #pragma once
 #include <memory>
-#include <unordered_map>
 #include "Bar.h"
 #include "../Util/Utils.h"
 class BarGraph
@@ -26,12 +25,11 @@ public:
 	void draw(sf::RenderWindow &window);
 	bool isEmpty();
 	int size();
-	std::map<int,Bar> &getItem();
+	std::vector<Bar> &getItem();
 	Data data;
 
 private:
-	std::map<int,Bar> bars;
-	std::map<int, Bar>::iterator it;
+	std::vector<Bar> bars;
 	ShapeProperty shapeProperty_;
 	bool isShuffle= false;
 

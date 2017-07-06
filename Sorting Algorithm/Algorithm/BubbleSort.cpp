@@ -11,7 +11,7 @@ void BubbleSort::sort()
 {
 	for (size_t z = 0; z < speed_; z++)
 	{
-		if (i >= dec && dec > 0)
+		if (i > dec  - 1 && (dec - 1) > 0)
 		{
 			float value = (float)(dec) / (float)barGraph->size();
 			float lerp = (1 - value) + value * barGraph->size();
@@ -22,7 +22,7 @@ void BubbleSort::sort()
 			i = 0;
 		}
 		
-		if (barGraph->get(i).getHeight() > barGraph->get(i + 1).getHeight() && dec > 0)
+		if (barGraph->get(i).getHeight() > barGraph->get(i + 1).getHeight() && (dec - 1) > 0)
 		{
 			utility::swap(barGraph->get(i), barGraph->get(i + 1));
 

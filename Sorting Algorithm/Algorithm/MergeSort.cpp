@@ -15,13 +15,13 @@ void MergeSort::sort()
 	mergeSort(barGraph->getItem());
 }
 
-void MergeSort::mergeSort(std::map<int, Bar>& bars)
+void MergeSort::mergeSort(std::vector<Bar> & bars)
 {
 
 	if (bars.size() <= 1) return;
 
-	std::map<int, Bar> left;
-	std::map<int, Bar> right;
+	std::vector<Bar> left;
+	std::vector<Bar>right;
 
 	int mid = bars.size() / 2;
 	for (size_t j = 0; j < mid;j++)
@@ -37,7 +37,7 @@ void MergeSort::mergeSort(std::map<int, Bar>& bars)
 	merge(left, right, bars);
 }
 
-void MergeSort::merge(std::map<int, Bar>& left, std::map<int, Bar>& right, std::map<int, Bar>& bars)
+void MergeSort::merge(std::vector<Bar>& left, std::vector<Bar>& right, std::vector<Bar>& bars)
 {
 	int nL = left.size();
 	int nR = right.size();

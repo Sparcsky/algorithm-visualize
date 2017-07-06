@@ -37,8 +37,8 @@ void BarGraph::update()
 {
 	if (bars.size() > data.barNumber)
 	{
-		it = bars.find(data.barNumber);
-		bars.erase(it, bars.end());
+		bars.resize(data.barNumber);
+
 	}
 	else
 	{
@@ -46,13 +46,9 @@ void BarGraph::update()
 		{
 			if (bars.size() < data.barNumber)
 			{
-				it = bars.find(bars.size() + i);
-				if (it == bars.end())
-				{
-					Bar bar;
-					bar.setProperty(shapeProperty_);
-					bars[i] = bar;
-				}
+				Bar bar;
+				bar.setProperty(shapeProperty_);
+				bars.push_back(bar);
 			}
 
 			sf::Vector2f size_(data.size.x, i * data.size.y);
@@ -95,7 +91,7 @@ int BarGraph::size()
 	return bars.size();
 }
 
-std::map<int, Bar> & BarGraph::getItem()
+std::vector<Bar> & BarGraph::getItem()
 {
 	return bars;
 }
