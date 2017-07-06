@@ -23,7 +23,6 @@ protected:
 	float speed_ = 0;
 	int dec = 0;
 	int i = 0;
-	float color_index = 0.0f;
 	sf::Sound algoSound;
 };
 

@@ -1,4 +1,5 @@
 #include "BubbleSort.h"
+#include <iostream>
 BubbleSort::BubbleSort()
 {
 }
@@ -11,18 +12,18 @@ void BubbleSort::sort()
 {
 	for (size_t z = 0; z < speed_; z++)
 	{
-		if (i > (dec - 1) && (dec - 1) > 0)
+		if (i >= (dec - 1))
 		{
 			float value = (float)(dec) / (float)barGraph->size();
 			float lerp = (1 - value) + value * barGraph->size();
-
 			sf::Color color(lerp * .5f, lerp * value, lerp * 10);
-			barGraph->get(dec).setColor(color);
+			std::cout << dec << std::endl;
+			barGraph->get(i).setColor(color);
 			dec--;
 			i = 0;
 		}
 
-		if (barGraph->get(i).getHeight() > barGraph->get(i + 1).getHeight() && (dec - 1) >= 0)
+		if (barGraph->get(i).getHeight() > barGraph->get(i + 1).getHeight())
 		{
 			utility::swap(barGraph->get(i), barGraph->get(i + 1));
 

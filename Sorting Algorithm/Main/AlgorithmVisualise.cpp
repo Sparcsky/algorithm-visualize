@@ -66,6 +66,7 @@ void AlgorithmVisualise::handleInput(sf::Event & event, sf::Vector2f mousePos)
 		sortAlgorithm = AlgorithmFactory::getAlgorithm(selectSort);
 		sortAlgorithm->setVisual(barGraph);
 		sortAlgorithm->setSound(buffer);
+		barGraph.reset();
 		barGraph.shuffle();
 		start = true;
 	}

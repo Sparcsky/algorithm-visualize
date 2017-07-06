@@ -9,8 +9,9 @@ public:
 	
 	virtual void sort();
 	virtual void reset() override;
-
+	bool isFinish();
 private:
 	int j = 0;
+	bool isFinished = false;
 };
 
