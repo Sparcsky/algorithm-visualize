@@ -8,7 +8,7 @@ BubbleSort::~BubbleSort()
 {
 }
 
-void BubbleSort::sort()
+void BubbleSort::sort(std::vector<Bar> & bar)
 {
 	if (isSortFinished()) return;
 
@@ -16,18 +16,18 @@ void BubbleSort::sort()
 	{
 		if (i >= dec - 1)
 		{
-			float value = (float)(dec) / (float)barGraph->size();
-			float lerp = (1 - value) + value * barGraph->size();
+			float value = (float)(dec) / (float) bar.size();
+			float lerp = (1 - value) + value *  bar.size();
 			sf::Color color(lerp * .5f, lerp * value, lerp * 10);
-			barGraph->get(i).setColor(color);
+			bar[i].setColor(color);
 			dec--;
 			i = 0;
 		}
 
-		if (barGraph->get(i).getHeight() > barGraph->get(i + 1).getHeight())
+		if (bar[i].getHeight() >bar[i + 1].getHeight())
 		{
-			utility::swap(barGraph->get(i), barGraph->get(i + 1));
-			float invlerp = (float)i / (float)barGraph->size();
+			utility::swap(bar[i], bar[i + 1]);
+			float invlerp = (float)i / (float)bar.size();
 			algoSound.setPitch(invlerp);
 			algoSound.play();
 		}

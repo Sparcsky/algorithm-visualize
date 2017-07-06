@@ -12,7 +12,7 @@ public:
 	~SortAlgorithm();
 
 	virtual void setSpeed(float speed);
-	virtual void sort() = 0;
+	virtual void sort(std::vector<Bar> & bar) = 0;
 	virtual bool isSortFinished() = 0;
 
 	virtual void setVisual(BarGraph & barGraph);

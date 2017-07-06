@@ -6,7 +6,7 @@ class SelectionSort :
 public:
 	SelectionSort();
 	~SelectionSort();
-	virtual void sort() override;
+	virtual void sort(std::vector<Bar> & bar) override;
 	virtual bool isSortFinished() override;
 
 private:

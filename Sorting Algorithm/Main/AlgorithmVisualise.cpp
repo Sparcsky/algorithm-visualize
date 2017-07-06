@@ -41,7 +41,7 @@ void AlgorithmVisualise::run(sf::RenderWindow &window)
 		if (start)
 		{
 			sortAlgorithm->setSpeed(gui.sliders[0].getValue());
-			sortAlgorithm->sort();
+			sortAlgorithm->sort(barGraph.getItem());
 		}
 		else if (gui.textButtons[1].checked)
 		{

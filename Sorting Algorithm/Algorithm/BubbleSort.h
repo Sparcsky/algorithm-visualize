@@ -7,7 +7,7 @@ public:
 	BubbleSort();
 	~BubbleSort();
 
-	virtual void sort() override;
+	virtual void sort(std::vector<Bar> & bar) override;
 	virtual bool isSortFinished()override;
 protected:
 };

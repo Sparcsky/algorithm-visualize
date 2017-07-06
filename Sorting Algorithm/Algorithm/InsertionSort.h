@@ -7,7 +7,7 @@ public:
 	InsertionSort();
 	~InsertionSort();
 	
-	virtual void sort();
+	virtual void sort(std::vector<Bar> & bar) override;
 	virtual void reset() override;
 	virtual bool isSortFinished() override;
 private:

@@ -8,35 +8,27 @@ MergeSort::MergeSort()
 MergeSort::~MergeSort()
 {
 }
-#include <iostream>
 
-void MergeSort::sort()
+void MergeSort::sort(std::vector<Bar> & bar)
 {
-	mergeSort(barGraph->getItem());
-}
-
-void MergeSort::mergeSort(std::vector<Bar> & bars)
-{
-
-	if (bars.size() <= 1) return;
+	if (bar.size() <= 1) return;
 
 	std::vector<Bar> left;
 	std::vector<Bar>right;
 
-	int mid = bars.size() / 2;
+	int mid = bar.size() / 2;
 	for (size_t j = 0; j < mid;j++)
 	{
-		left.push_back(bars[j]);
+		left.push_back(bar[j]);
 	}
-	for (size_t j = 0; j < bars.size() - mid; j++)
+	for (size_t j = 0; j < bar.size() - mid; j++)
 	{
-		right.push_back(bars[mid + j]);
+		right.push_back(bar[mid + j]);
 	}
-	mergeSort(left);
-	mergeSort(right);
-	merge(left, right, bars);
+	sort(left);
+	sort(right);
+	merge(left, right, bar);
 }
-
 void MergeSort::merge(std::vector<Bar>& left, std::vector<Bar>& right, std::vector<Bar>& bars)
 {
 	int nL = left.size();
