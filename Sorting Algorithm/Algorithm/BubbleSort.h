@@ -8,6 +8,7 @@ public:
 	~BubbleSort();
 
 	virtual void sort() override;
+	virtual bool isSortFinished()override;
 protected:
 };
 

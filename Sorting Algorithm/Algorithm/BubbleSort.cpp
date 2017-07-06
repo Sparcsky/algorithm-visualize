@@ -10,7 +10,7 @@ BubbleSort::~BubbleSort()
 
 void BubbleSort::sort()
 {
-	if (dec < 0) return;
+	if (isSortFinished()) return;
 
 	for (size_t z = 0; z < speed_; z++)
 	{
@@ -33,4 +33,10 @@ void BubbleSort::sort()
 		}
 		i++;
 	}
+}
+
+bool BubbleSort::isSortFinished()
+{
+	if (dec < 0) return true;
+	return false;
 }

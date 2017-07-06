@@ -10,6 +10,7 @@ InsertionSort::~InsertionSort()
 }
 void InsertionSort::sort()
 {
+
 	for (size_t z = 0; z < speed_; z++)
 	{
 		if (j > 0 && barGraph->get(j - 1).getHeight() >= barGraph->get(j).getHeight())
@@ -23,7 +24,7 @@ void InsertionSort::sort()
 			}
 			else
 			{
-				if (!isFinish())
+				if (!isSortFinished())
 				{
 					float invlerp = (float)i / (float)barGraph->size();
 					algoSound.setPitch(invlerp);
@@ -46,7 +47,7 @@ void InsertionSort::reset()
 	isFinished = false;
 }
 
-bool InsertionSort::isFinish()
+bool InsertionSort::isSortFinished()
 {
 	if (i > barGraph->size() - 1)
 	{

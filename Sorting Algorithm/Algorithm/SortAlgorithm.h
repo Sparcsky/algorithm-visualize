@@ -13,9 +13,10 @@ public:
 
 	virtual void setSpeed(float speed);
 	virtual void sort() = 0;
+	virtual bool isSortFinished() = 0;
+
 	virtual void setVisual(BarGraph & barGraph);
 	virtual void reset();
-
 	virtual void setSound(sf::SoundBuffer &buffer);
 
 protected:
@@ -24,5 +25,6 @@ protected:
 	int dec = 0;
 	int i = 0;
 	sf::Sound algoSound;
+	bool isFinished = false;
 };
 

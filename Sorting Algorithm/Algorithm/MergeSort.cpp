@@ -71,6 +71,11 @@ void MergeSort::merge(std::vector<Bar>& left, std::vector<Bar>& right, std::vect
 	}
 }
 
+bool MergeSort::isSortFinished()
+{
+	return false;
+}
+
 //////////// void merge(vector<int>& left, vector<int>& right, vector<int>& nums)
 ////////////{
 ////////////	int nL = left.size();
