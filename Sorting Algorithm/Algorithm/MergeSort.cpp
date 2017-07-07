@@ -14,7 +14,7 @@ void MergeSort::sort(std::vector<Bar> & bar)
 	if (bar.size() <= 1) return;
 
 	std::vector<Bar> left;
-	std::vector<Bar>right;
+	std::vector<Bar> right;
 
 	int mid = bar.size() / 2;
 
