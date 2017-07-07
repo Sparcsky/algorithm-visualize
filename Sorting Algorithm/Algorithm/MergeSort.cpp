@@ -17,6 +17,7 @@ void MergeSort::sort(std::vector<Bar> & bar)
 	std::vector<Bar>right;
 
 	int mid = bar.size() / 2;
+
 	for (size_t j = 0; j < mid;j++)
 	{
 		left.push_back(bar[j]);
@@ -29,7 +30,7 @@ void MergeSort::sort(std::vector<Bar> & bar)
 	sort(right);
 	merge(left, right, bar);
 }
-void MergeSort::merge(std::vector<Bar>& left, std::vector<Bar>& right, std::vector<Bar>& bars)
+void MergeSort::merge(std::vector<Bar> left, std::vector<Bar> right, std::vector<Bar>& bars)
 {
 	int nL = left.size();
 	int nR = right.size();
