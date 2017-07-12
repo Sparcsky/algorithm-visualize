@@ -2,8 +2,13 @@
 
 void utility::swap(Bar & first, Bar & second)
 {
-	std::swap(first, second);
 	sf::Vector2f temp = first.getPos();
 	first.setPosition(second.getPos());
 	second.setPosition(temp);
+	std::swap(first, second);
+}
+
+int utility::min(int a, int b)
+{
+	return a <= b ? a : b;
 }

@@ -1,5 +1,5 @@
 #include "MergeSort.h"
-
+#include <iostream>
 MergeSort::MergeSort()
 {
 }
@@ -13,10 +13,13 @@ void MergeSort::sort(std::vector<Bar> & bar)
 {
 	if (bar.size() <= 1) return;
 
+	int mid = bar.size() / 2;
+
 	std::vector<Bar> left;
 	std::vector<Bar> right;
 
-	int mid = bar.size() / 2;
+	left.reserve(mid);
+	right.reserve(bar.size() - mid);
 
 	for (size_t j = 0; j < mid;j++)
 	{
@@ -26,41 +29,36 @@ void MergeSort::sort(std::vector<Bar> & bar)
 	{
 		right.push_back(bar[mid + j]);
 	}
+
 	sort(left);
 	sort(right);
 	merge(left, right, bar);
 }
-void MergeSort::merge(std::vector<Bar> left, std::vector<Bar> right, std::vector<Bar>& bars)
+void MergeSort::merge(std::vector<Bar> &left, std::vector<Bar> & right, std::vector<Bar>& bars)
 {
 	int nL = left.size();
 	int nR = right.size();
-	int i = 0, j = 0, k = 0;
+	int i = 0, leftLoop = 0, rightLoop = 0;
 
-	while (j < nL && k < nR)
+	while (leftLoop < nL && rightLoop < nR)
 	{
-		if (left[j].getHeight() < right[k].getHeight())
+		if (left[leftLoop].getHeight() <= right[rightLoop].getHeight())
 		{
-			utility::swap(left[j], bars[i]);
-			j++;
+			bars[i] = left[leftLoop++];
 		}
 		else
 		{
-			utility::swap(right[k], bars[i]);
-			k++;
+			bars[i] = right[rightLoop++];
 		}
 		i++;
 	}
-	while (j < nL)
+	while (leftLoop < nL)
 	{
-		utility::swap(left[j], bars[i]);
-		j++;
-		i++;
+		bars[i++] = left[leftLoop++];
 	}
-	while (k < nR)
+	while (rightLoop < nR)
 	{
-		utility::swap(right[k], bars[i]);
-		k++;
-		i++;
+		bars[i++] = right[rightLoop++];
 	}
 }
 

@@ -8,7 +8,7 @@ AlgorithmVisualise::AlgorithmVisualise()
 	barGraph = BarGraph(barProperty);
 
 	gui.sliders[0].setValue(500);
-	gui.sliders[1].setValue(2000);
+	gui.sliders[1].setValue(50);
 	gui.textButtons[0].disable = true;
 	gui.textButtons[2].disable = true;
 	gui.textButtons[3].disable = true;

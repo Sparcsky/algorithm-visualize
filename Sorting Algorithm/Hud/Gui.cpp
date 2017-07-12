@@ -12,7 +12,7 @@ Gui::Gui()
 
 	for (size_t i = 0; i < 5; i++)
 	{
-		sliders.push_back(guiFactory.makeSlide(5, font, *atlas, "slider", "sliderBox", Vector2f(300, 20 + (i * 21)), Vector2f(.6f, 1)));
+		sliders.push_back(guiFactory.makeSlide(20, font, *atlas, "slider", "sliderBox", Vector2f(300, 20 + (i * 21)), Vector2f(.6f, 1)));
 		texts.push_back(guiFactory.makeText(font, sldName[i], 14, Vector2f(225, 12 + (i * 20))));
 		if (i < 4)
 		{
